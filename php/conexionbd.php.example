@@ -1,8 +1,8 @@
 <?php
 	$host = "localhost";
-	$user = "sistemaweb3";
-	$pass = "sistemaweb3";
-	$db = "sistemaweb3";
+	$user = "root";
+	$pass = "";
+	$db = "sistemaweb";
 
 	$conn = new mysqli($host,$user,$pass,$db);
 
