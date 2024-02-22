@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"> 
+	<meta charset="utf-8">
 	<title>Control de Ventas</title>
 	<link rel="icon" href="../images/clipboard.png">
 	<link rel="stylesheet" href="../styles/style.css">
@@ -39,7 +39,7 @@
 		<u><h2>Ventas Registradas</h2></u>
 	</div>
 	<div>
-		<table style="width:100%; text-align: center;">
+		<table text-align: center;">
 			<thead>
 				<tr>
 					<th>Num. Registro</th>

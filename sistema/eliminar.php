@@ -12,7 +12,7 @@
 	if (isset($_POST['idreg']) && !empty($_POST['idreg'])) {
 		$idr= $_POST['idreg'];
 		$sql = "DELETE FROM ventas WHERE id = '$idr'";
-	
+
 		if (mysqli_query($conn, $sql)) {
 	    	header('location: eliminar.php');
 
@@ -20,10 +20,11 @@
 		mysqli_close($conn);
 	}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"> 
+	<meta charset="utf-8">
 	<title>Control de Ventas</title>
 	<link rel="icon" href="../images/cross.png">
 	<link rel="stylesheet" href="../styles/style.css">
@@ -61,7 +62,7 @@
 			</div>
 		</form>
 	</div>
-		
+
 	<div>
 		<table style="width:100%; text-align: center;">
 			<thead>

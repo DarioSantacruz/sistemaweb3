@@ -4,18 +4,18 @@
 	if (empty($_SESSION['active'])) {
 		header('location: ../');
 	}
-	
+
 	require '../php/conexionbd.php';
 
 	if (isset($_POST['numventas']) && !empty($_POST['numventas']) &&
 		isset($_POST['totventas']) && !empty($_POST['totventas']) &&
 		isset($_POST['fecventas']) && !empty($_POST['fecventas'])) {
-			
+
 		$numv = $_POST['numventas'];
 		$totv = $_POST['totventas'];
 		$fecv = $_POST['fecventas'];
 		$sql = "INSERT INTO ventas  (num_ventas, total_ventas, fecha) VALUES ('$numv', '$totv', '$fecv')";
-	
+
 		if (mysqli_query($conn, $sql)) {
 	    	echo '<script language="javascript">alert("Registro: Correcto");</script>';
 		}
@@ -28,7 +28,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"> 
+	<meta charset="utf-8">
 	<title>Control de Ventas</title>
 	<link rel="icon" href="../images/check.png">
 	<link rel="stylesheet" href="../styles/style.css">

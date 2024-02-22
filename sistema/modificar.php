@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"> 
+	<meta charset="utf-8">
 	<title>Control de Ventas</title>
 	<link rel="icon" href="../images/modif.png">
 	<link rel="stylesheet" href="../styles/style.css">
