@@ -1,0 +1,152 @@
+$color_texto: white;
+$fuentes: Helvetica, sans-serif;
+$color_fondo: black;
+$color_acento: #3f51b5;
+
+body {
+				font-family: $fuentes;
+
+				margin: 0;
+				padding: 0;
+
+				background: $color_fondo;
+				background-size: cover;
+}
+
+.login-box {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+
+				width: 280px;
+
+				transform: translate(-50%, -50%);
+
+				color: $color_texto;
+
+				h1 {
+								font-size: 40px;
+
+								float: left;
+
+								margin-bottom: 50px;
+								padding: 13px 0;
+
+								border-bottom: 6px solid $color_acento;
+				}
+}
+
+.login {
+				width: 250px;
+				margin: 0 auto;
+
+				color: $color_texto;
+}
+
+.textbox {
+				font-size: 20px;
+
+				overflow: hidden;
+
+				width: 100%;
+				margin: 8px 0;
+				padding: 8px 0;
+
+				color: $color_texto;
+				border-bottom: 1px solid $color_acento;
+
+				i {
+								float: left;
+
+								width: 26px;
+
+								text-align: center;
+				}
+
+				input {
+								font-size: 18px;
+
+								float: left;
+
+								width: 80%;
+								margin: 0 10px;
+
+								color: $color_texto;
+								border: none;
+								outline: none;
+								background: none;
+				}
+}
+
+.btn {
+				font-size: 18px;
+
+				width: 100%;
+				margin: 12px 0;
+				padding: 5px;
+
+				cursor: pointer;
+
+				color: $color_texto;
+				border: 2px solid $color_acento;
+				background: none;
+}
+
+ul {
+				overflow: hidden;
+
+				margin: 0;
+				padding: 0;
+
+				list-style-type: none;
+
+				background-color: $color_fondo;
+}
+
+li {
+				float: left;
+
+				a {
+								font-size: 18px;
+
+								display: inline-block;
+
+								padding: 14px 16px;
+
+								text-align: center;
+								text-decoration: none;
+
+								color: $color_texto;
+				}
+}
+
+.active {
+				border-bottom: 6px solid $color_acento;
+}
+
+.sesion {
+				width: 100%;
+				margin: 12px 0;
+				padding: 5px;
+
+				cursor: pointer;
+				transform: translate(-20%);
+
+				color: $color_texto;
+				border: 2px solid $color_acento;
+				background: none;
+}
+
+tr {
+				font-size: 18px;
+
+				color: $color_texto;
+
+				text-orientation: center;
+}
+
+title {
+				text-align: center;
+
+				color: $color_texto;
+}
