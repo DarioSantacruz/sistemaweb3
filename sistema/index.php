@@ -13,7 +13,7 @@
 	<title>Control de Ventas</title>
 	<link rel="icon" href="../images/clipboard.png">
 	<link rel="stylesheet" href="../styles/style.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+	<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.0/css/all.css">
 </head>
 <body>
 	<div>
