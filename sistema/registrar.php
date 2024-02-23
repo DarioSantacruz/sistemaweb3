@@ -64,16 +64,19 @@
             <!--Formulario para registro de venta-->
             <div class="login">
                 <div class="textbox">
+                    <label for="numventas">Número de ventas:</label><br>
                     <i class="fas fa-clipboard-check"></i>
-                    <input type="text" placeholder="Número de ventas" name="numventas" autocomplete="off" required>
+                    <input type="number" id="numventas" name="numventas" min="1" name="numventas" autocomplete="off" required>
                 </div>
                 <div class="textbox">
+                    <label for="totventas">Total en ventas:</label><br>
                     <i class="fas fa-dollar-sign"></i>
-                    <input type="text" placeholder="Total en ventas" name="totventas" autocomplete="off" required>
+                    <input id="totventas" type="number" min="0.00" max="10000.00" step="1.00" autocomplete="off" required>
                 </div>
                 <div class="textbox">
+                    <label for="fecventas">Fecha:</label><br>
                     <i class="fas fa-calendar-alt"></i>
-                    <input type="text" placeholder="AAAA-MM-DD" name="fecventas" autocomplete="off" required>
+                    <input id="fecventas" type="date" name="fecventas" autocomplete="off" required>
                 </div>
                 <div class="alert" align-te></div>
                 <input class="btn" type="submit" value="Registrar">
