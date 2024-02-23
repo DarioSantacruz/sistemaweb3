@@ -60,16 +60,21 @@
                     <input type="text" placeholder="Número de registro" name="idv" value="<?php echo $id; ?>" disabled>
                 </div>
                 <div class="textbox">
+                    <label for="numventas">Número de ventas:</label><br>
                     <i class="fas fa-clipboard-check"></i>
-                    <input type="text" placeholder="Número de ventas" name="numv" value="<?php echo $num; ?>">
+                    <input type="number" id="numventas" min="1" placeholder="Número de ventas" name="numv"
+                        value="<?php echo $num; ?>">
                 </div>
                 <div class="textbox">
+                    <label for="totventas">Total en ventas:</label><br>
                     <i class="fas fa-dollar-sign"></i>
-                    <input type="text" placeholder="Total en ventas" name="totv" value="<?php echo $tot; ?>">
+                    <input id="totventas" type="number" name="totv" type="number" min="0.00" step="1.00"
+                        value="<?php echo $tot; ?>">
                 </div>
                 <div class="textbox">
+                    <label for="fecventas">Fecha:</label><br>
                     <i class="fas fa-calendar-alt"></i>
-                    <input type="text" placeholder="AAAA-MM-DD" name="fecv" value="<?php echo $fec; ?>">
+                    <input id="fecventas" type="date" name="fecv" value="<?php echo $fec; ?>">
                 </div>
                 <div class="alert" style="text-align: center;"><?php echo isset($alert)? $alert : ''; ?>
                 </div>
