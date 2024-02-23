@@ -1,3 +1,21 @@
+<?php
+    require '../php/conexionbd.php';
+    $alert = '';
+    session_start();
+    if (empty($_SESSION['active'])) {
+        header('location: ../');
+    }
+
+    if (isset($_GET['id']) && !empty($_GET['id'])) {
+        $idr = $_GET['id'];
+        $sql = "DELETE FROM ventas WHERE id = '$idr'";
+
+        if (mysqli_query($conn, $sql)) {
+            header('location: modificar.php');
+            exit();
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,24 +25,6 @@
     <link rel="icon" href="../images/modif.png">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <?php
-	    require '../php/conexionbd.php';
-	    $alert = '';
-	    session_start();
-	    if (empty($_SESSION['active'])) {
-	    	header('location: ../');
-	    }
-
-        if (isset($_GET['id']) && !empty($_GET['id'])) {
-            $idr = $_GET['id'];
-            $sql = "DELETE FROM ventas WHERE id = '$idr'";
-
-            if (mysqli_query($conn, $sql)) {
-                header('location: modificar.php');
-                exit(); // Terminate script after redirect
-            }
-        }
-    ?>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                 <a href="registrar.php">Registrar</a>
             </li>
             <li>
-                <a href="modificar.php" class="active">Modificar</a>
+                <a href="modificar.php" class="active">Modificar / Borrar</a>
             </li>
             <li style="float:right">
                 <a href="../php/salir.php" class="sesion">Cerrar sesión</a>

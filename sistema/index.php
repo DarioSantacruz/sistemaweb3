@@ -1,3 +1,11 @@
+<?php
+    require '../php/conexionbd.php';
+    $alert = '';
+    session_start();
+    if (empty($_SESSION['active'])) {
+        header('location: ../');
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,14 +15,6 @@
     <link rel="icon" href="../images/clipboard.png">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <?php
-	    require '../php/conexionbd.php';
-	    $alert = '';
-	    session_start();
-	    if (empty($_SESSION['active'])) {
-	    	header('location: ../');
-	    }
-    ?>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
                 <a href="registrar.php">Registrar</a>
             </li>
             <li>
-                <a href="modificar.php">Modificar</a>
+                <a href="modificar.php">Modificar / Borrar</a>
             </li>
             <li style="float:right">
                 <a href="../php/salir.php" class="sesion">Cerrar sesión</a>
@@ -62,7 +62,7 @@
                 </tr>
                 <?php
                     }
-            ?>
+                ?>
             </tbody>
         </table>
     </div>

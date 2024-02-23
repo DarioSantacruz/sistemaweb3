@@ -1,3 +1,39 @@
+<?php
+require '../php/conexionbd.php';
+
+if (!empty($_POST)) {
+    $alert='';
+    if (empty($_POST['numv']) || empty($_POST['totv']) || empty($_POST['fecv'])) {
+        $alert='<br>¡Todos los campos son obligatorios!</br>';
+    } else {
+        $id = $_GET['id'];
+        $num = $_POST['numv'];
+        $tot = $_POST['totv'];
+        $fec = $_POST['fecv'];
+
+        $query=mysqli_query($conn,"UPDATE ventas SET num_ventas = '$num', total_ventas = '$tot', fecha = '$fec' WHERE id = '$id'");
+
+        header('location: modificar.php');
+    }
+}
+if (empty($_GET['id'])) {
+    header('location: modificar.php');
+}
+$idvnt=$_GET['id'];
+$sql=mysqli_query($conn,"SELECT * FROM ventas WHERE id = $idvnt");
+$result_sql=mysqli_num_rows($sql);
+
+if ($result_sql == 0) {
+    header('location: modificar.php');
+} else {
+    while ($data = mysqli_fetch_array($sql)) {
+        $id = $data['id'];
+        $num = $data['num_ventas'];
+        $tot = $data['total_ventas'];
+        $fec = $data['fecha'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,48 +43,12 @@
     <link rel="icon" href="../images/modif.png">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <?php
-        require '../php/conexionbd.php';
-
-        if (!empty($_POST)) {
-            $alert='';
-            if (empty($_POST['numv']) || empty($_POST['totv']) || empty($_POST['fecv'])) {
-                $alert='<br>¡Todos los campos son obligatorios!</br>';
-            }else{
-                $id = $_GET['id'];
-                $num = $_POST['numv'];
-                $tot = $_POST['totv'];
-                $fec = $_POST['fecv'];
-
-                $query=mysqli_query($conn,"UPDATE ventas SET num_ventas = '$num', total_ventas = '$tot', fecha = '$fec' WHERE id = '$id'");
-
-                header('location: modificar.php');
-            }
-        }
-        if (empty($_GET['id'])) {
-            header('location: modificar.php');
-        }
-        $idvnt=$_GET['id'];
-        $sql=mysqli_query($conn,"SELECT * FROM ventas WHERE id = $idvnt");
-        $result_sql=mysqli_num_rows($sql);
-
-        if ($result_sql == 0) {
-            header('location: modificar.php');
-        }
-        else {
-            while ($data = mysqli_fetch_array($sql)) {
-                $id = $data['id'];
-                $num = $data['num_ventas'];
-                $tot = $data['total_ventas'];
-                $fec = $data['fecha'];
-    ?>
 </head>
 
 <body>
     <div>
         <ul>
-            <li style="float:left; transform: translate(35%,0%);">
-                <a href="modificar.php" class="sesion"> &lt; Regresar</a> </li>
+            <li style="float:left;"><a href="modificar.php" class="sesion">&lt; Regresar</a></li>
         </ul>
     </div>
     <div>
@@ -76,16 +76,12 @@
                     <i class="fas fa-calendar-alt"></i>
                     <input id="fecventas" type="date" name="fecv" value="<?php echo $fec; ?>">
                 </div>
-                <div class="alert" style="text-align: center;"><?php echo isset($alert)? $alert : ''; ?>
+                <div class="alert" style="text-align: center;">
+                    <?php echo isset($alert)? $alert : ''; ?>
                 </div>
                 <input class="btn" type="submit" value="Modificar">
             </div>
         </form>
     </div>
 </body>
-<?php
-    }
-}
-?>
-
 </html>
