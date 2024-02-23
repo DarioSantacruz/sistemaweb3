@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -46,41 +44,38 @@
     ?>
 </head>
 
-<body style="color: white;">
+<body>
     <div>
         <ul>
             <li style="float:left; transform: translate(35%,0%);">
-                <a href="modificar.php" class="sesion">
-                    < Regresar</a> </li> </ul> </div> <div style="text-align: center; color: #3f51b5;">
-                        <u>
-                            <h2>Modificar Venta</h2>
-                        </u>
-                        <form method="POST">
-                            <div class="login">
-                                <div class="textbox">
-                                    <i class="fas fa-hashtag"></i>
-                                    <input type="text" placeholder="Número de registro" name="idv"
-                                        value="<?php echo $id; ?>" disabled>
-                                </div>
-                                <div class="textbox">
-                                    <i class="fas fa-clipboard-check"></i>
-                                    <input type="text" placeholder="Número de ventas" name="numv"
-                                        value="<?php echo $num; ?>">
-                                </div>
-                                <div class="textbox">
-                                    <i class="fas fa-dollar-sign"></i>
-                                    <input type="text" placeholder="Total en ventas" name="totv"
-                                        value="<?php echo $tot; ?>">
-                                </div>
-                                <div class="textbox">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <input type="text" placeholder="AAAA-MM-DD" name="fecv" value="<?php echo $fec; ?>">
-                                </div>
-                                <div class="alert" style="text-align: center;"><?php echo isset($alert)? $alert : ''; ?>
-                                </div>
-                                <input class="btn" type="submit" value="Modificar">
-                            </div>
-                        </form>
+                <a href="modificar.php" class="sesion"> &lt; Regresar</a> </li>
+        </ul>
+    </div>
+    <div style="text-align: center; color: #3f51b5;">
+        <h2>Modificar Venta</h2>
+        <form method="POST">
+            <div class="login">
+                <div class="textbox">
+                    <i class="fas fa-hashtag"></i>
+                    <input type="text" placeholder="Número de registro" name="idv" value="<?php echo $id; ?>" disabled>
+                </div>
+                <div class="textbox">
+                    <i class="fas fa-clipboard-check"></i>
+                    <input type="text" placeholder="Número de ventas" name="numv" value="<?php echo $num; ?>">
+                </div>
+                <div class="textbox">
+                    <i class="fas fa-dollar-sign"></i>
+                    <input type="text" placeholder="Total en ventas" name="totv" value="<?php echo $tot; ?>">
+                </div>
+                <div class="textbox">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="text" placeholder="AAAA-MM-DD" name="fecv" value="<?php echo $fec; ?>">
+                </div>
+                <div class="alert" style="text-align: center;"><?php echo isset($alert)? $alert : ''; ?>
+                </div>
+                <input class="btn" type="submit" value="Modificar">
+            </div>
+        </form>
     </div>
 </body>
 <?php
