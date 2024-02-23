@@ -69,7 +69,10 @@
                     <td class="table_row num_ventas"><?php echo $ventas['num_ventas'];?></td>
                     <td class="table_row total_ventas"><?php echo '$' . number_format($ventas['total_ventas'],2);?></td>
                     <td class="table_row fecha"><?php echo $ventas['fecha'];?></td>
-                    <td><a href="mod.php?id=<?php echo $ventas['id']; ?>" alt="Editar"><i class="fas fa-edit"></i></a> <?php echo "<a href='modificar.php?id=" . $ventas['id'] . "'><img class='delete_icon' src='../images/cross.png' alt='Borrar registro'></a>" ?></td>
+                    <td>
+                        <a href="mod.php?id=<?php echo $ventas['id']; ?>" title="Editar" onclick="return confirm('¿Estás seguro de que deseas editar este registro?');"><i class="fas fa-edit"></i></a>
+                        <a href="modificar.php?id=<?php echo $ventas['id']; ?>" title="Eliminar" onclick="return confirm('¿Estás seguro de que deseas eliminar este registro?');"><img class="delete_icon" src="../images/cross.png" alt="Borrar registro"></a>
+                    </td>
                 </tr>
                 <?php
                     }
