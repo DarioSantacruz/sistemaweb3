@@ -39,17 +39,15 @@
 <html>
 
 <head>
-    <!--Atributos necesarios para el funcionamiento-->
     <meta charset="utf-8">
     <title>Control de Ventas</title>
     <link rel="icon" href="images/open-book.png">
-    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
-    <form action="" method="POST">
-        <!--Formulario para el inicio de sesión-->
+    <form method="POST">
         <div class="login-box">
             <h1>Iniciar sesión</h1>
             <div class="textbox">

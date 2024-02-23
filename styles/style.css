@@ -1,10 +1,12 @@
 html {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(45deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
-  background-size: cover;
+  height: 100%;
 }
 
 body {
+  min-height: 100%;
+  background: rgb(2, 0, 36) url(../images/bglogin.png);
+  background: linear-gradient(45deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
+  background-size: cover;
   font-family: Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -127,15 +129,13 @@ table {
   -webkit-backdrop-filter: blur(5px);
 }
 table .table_header {
+  padding: 15px;
+  text-align: center;
   color: #000000;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
   background: #FFFFFF;
-}
-table .table_header {
-  padding: 15px;
-  text-align: center;
 }
 
 tbody tr {
