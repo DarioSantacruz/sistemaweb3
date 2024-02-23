@@ -11,6 +11,11 @@ body {
   color: #FFFFFF;
 }
 
+.delete_icon {
+  width: 16px;
+  height: 16px;
+}
+
 .login-box {
   position: absolute;
   top: 50%;

@@ -15,17 +15,15 @@
 	    	header('location: ../');
 	    }
 
-	    require '../php/conexionbd.php';
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
+            $idr = $_GET['id'];
+            $sql = "DELETE FROM ventas WHERE id = '$idr'";
 
-	    if (isset($_POST['idreg']) && !empty($_POST['idreg'])) {
-	    	$idr= $_POST['idreg'];
-	    	$sql = "DELETE FROM ventas WHERE id = '$idr'";
-
-	    	if (mysqli_query($conn, $sql)) {
-	        	header('location: eliminar.php');
-	    	}
-	    	mysqli_close($conn);
-	    }
+            if (mysqli_query($conn, $sql)) {
+                header('location: eliminar.php');
+                exit(); // Terminate script after redirect
+            }
+        }
     ?>
 </head>
 
@@ -50,9 +48,7 @@
         </ul>
     </div>
     <div style="text-align: center; color: #3f51b5;">
-        <u>
-            <h2>Eliminar Venta</h2>
-        </u>
+        <h2>Eliminar Venta</h2>
         <form action="" method="POST">
             <div class="login">
                 <div class="textbox">
@@ -86,6 +82,13 @@
                     <td class="table_row num_ventas"><?php echo $ventas['num_ventas'];?></td>
                     <td class="table_row total_ventas"><?php echo '$' . number_format($ventas['total_ventas'],2);?></td>
                     <td class="table_row fecha"><?php echo $ventas['fecha'];?></td>
+                    <td><a href="mod.php?id=<?php echo $ventas['id']; ?>" alt="Editar"><i class="fas fa-edit"></i></a>
+                    <?php
+                        echo "<a href='eliminar.php?id=" .
+                        $ventas['id'] .
+                        "'><img class='delete_icon' src='../images/cross.png' alt='Borrar registro'></a>"
+                        ?>
+                    </td>
                 </tr>
                 <?php
                     }
