@@ -37,20 +37,17 @@
             </li>
         </ul>
     </div>
-    <div style="text-align: center; color: #3f51b5;">
-        <u>
-            <h2>Modificar Venta</h2>
-        </u>
+    <div>
+        <h2>Modificar Venta</h2>
     </div>
     <div>
-        <table style="width:100%; text-align: center;">
+        <table>
             <thead>
                 <tr>
-                    <th>Num. Registro</th>
-                    <th>Número de ventas</th>
-                    <th>Total en ventas</th>
-                    <th>Fecha</th>
-                    <th></th>
+                    <th class="table_header id">Num. Registro</th>
+                    <th class="table_header num_ventas">Número de ventas</th>
+                    <th class="table_header total_ventas">Total en ventas</th>
+                    <th class="table_header fecha">Fecha</th>
                 </tr>
             </thead>
             <?php
@@ -59,19 +56,22 @@
 			?>
             <tbody>
                 <?php
-					while ($ventas=mysqli_fetch_array($result)) {
-				?>
+                    $sql="SELECT * FROM ventas";
+                    $result=mysqli_query($conn,$sql);
+
+                    while ($ventas=mysqli_fetch_array($result)) {
+                ?>
                 <tr>
-                    <td><?php echo $ventas['id'];?></td>
-                    <td><?php echo $ventas['num_ventas'];?></td>
-                    <td><?php echo $ventas['total_ventas'];?></td>
-                    <td><?php echo $ventas['fecha'];?></td>
-                    <td><a href="mod.php?id=<?php echo $ventas['id']; ?>">Modificar</a></td>
+                    <td class="table_row id"><?php echo $ventas['id'];?></td>
+                    <td class="table_row num_ventas"><?php echo $ventas['num_ventas'];?></td>
+                    <td class="table_row total_ventas"><?php echo '$' . number_format($ventas['total_ventas'],2);?></td>
+                    <td class="table_row fecha"><?php echo $ventas['fecha'];?></td>
+                    <td><a href="mod.php?id=<?php echo $ventas['id']; ?>" alt="Editar"><i class="fas fa-edit"></i></a></td>
                 </tr>
+                <?php
+                    }
+            ?>
             </tbody>
-            <?php
-				}
-			?>
         </table>
     </div>
 </body>
