@@ -29,9 +29,6 @@
             <li>
                 <a href="modificar.php">Modificar</a>
             </li>
-            <li>
-                <a href="eliminar.php">Eliminar</a>
-            </li>
             <li style="float:right">
                 <a href="../php/salir.php" class="sesion">Cerrar sesión</a>
             </li>

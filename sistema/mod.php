@@ -51,7 +51,7 @@
                 <a href="modificar.php" class="sesion"> &lt; Regresar</a> </li>
         </ul>
     </div>
-    <div style="text-align: center; color: #3f51b5;">
+    <div>
         <h2>Modificar Venta</h2>
         <form method="POST">
             <div class="login">

@@ -1,3 +1,4 @@
+<link rel="icon" href="../images/modif.png">
 <!DOCTYPE html>
 <html>
 
@@ -46,18 +47,13 @@
             <li>
                 <a href="modificar.php">Modificar</a>
             </li>
-            <li>
-                <a href="eliminar.php">Eliminar</a>
-            </li>
             <li style="float:right">
                 <a href="../php/salir.php" class="sesion">Cerrar sesión</a>
             </li>
         </ul>
     </div>
-    <div style="text-align: center; color: #3f51b5;">
-        <u>
+    <div>
             <h2>Registrar Venta</h2>
-        </u>
     </div>
     <div>
         <form action="" method="POST">
