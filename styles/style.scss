@@ -4,31 +4,21 @@ sans-serif;
 $color_fondo: rgb(2, 0, 36);
 $color_acento: #5eb53f;
 
-@function colorBasedOnValue($value) {
-	@if $value>0.5 {
-		@return #000000; // black
-	}
-
-	@else {
-		@return #FFFFFF; // white
-	}
-}
-
 html {
-  height: 100%;
+	height: 100%;
 }
-body {
-  min-height: 100%;
-	background: $color_fondo url(../images/bglogin.png);
-	background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-	background-size: cover;
 
+body {
 	font-family: $fuentes;
 
+	min-height: 100%;
 	margin: 0;
 	padding: 0;
 
 	color: $color_texto;
+	background: $color_fondo url(../images/bglogin.png);
+	background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+	background-size: cover;
 }
 
 .delete_icon {
