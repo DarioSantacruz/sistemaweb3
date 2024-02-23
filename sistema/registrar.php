@@ -66,12 +66,12 @@
                 <div class="textbox">
                     <label for="numventas">Número de ventas:</label><br>
                     <i class="fas fa-clipboard-check"></i>
-                    <input type="number" id="numventas" name="numventas" min="1" name="numventas" autocomplete="off" required>
+                    <input type="number" id="numventas" name="numventas" min="1" autocomplete="off" required>
                 </div>
                 <div class="textbox">
                     <label for="totventas">Total en ventas:</label><br>
                     <i class="fas fa-dollar-sign"></i>
-                    <input id="totventas" type="number" min="0.00" max="10000.00" step="1.00" autocomplete="off" required>
+                    <input id="totventas" type="number" min="0.00" step="1.00" autocomplete="off" required>
                 </div>
                 <div class="textbox">
                     <label for="fecventas">Fecha:</label><br>
