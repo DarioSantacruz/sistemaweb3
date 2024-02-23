@@ -14,10 +14,20 @@
 	    if (empty($_SESSION['active'])) {
 	    	header('location: ../');
 	    }
+
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
+            $idr = $_GET['id'];
+            $sql = "DELETE FROM ventas WHERE id = '$idr'";
+
+            if (mysqli_query($conn, $sql)) {
+                header('location: modificar.php');
+                exit(); // Terminate script after redirect
+            }
+        }
     ?>
 </head>
 
-<body style="color: white;">
+<body>
     <div>
         <ul>
             <li>
@@ -29,16 +39,13 @@
             <li>
                 <a href="modificar.php" class="active">Modificar</a>
             </li>
-            <li>
-                <a href="eliminar.php">Eliminar</a>
-            </li>
             <li style="float:right">
                 <a href="../php/salir.php" class="sesion">Cerrar sesión</a>
             </li>
         </ul>
     </div>
     <div>
-        <h2>Modificar Venta</h2>
+        <h2>Modificar / Eliminar Venta</h2>
     </div>
     <div>
         <table>
@@ -50,10 +57,6 @@
                     <th class="table_header fecha">Fecha</th>
                 </tr>
             </thead>
-            <?php
-				$sql="SELECT * FROM ventas";
-				$result=mysqli_query($conn,$sql);
-			?>
             <tbody>
                 <?php
                     $sql="SELECT * FROM ventas";
@@ -66,7 +69,7 @@
                     <td class="table_row num_ventas"><?php echo $ventas['num_ventas'];?></td>
                     <td class="table_row total_ventas"><?php echo '$' . number_format($ventas['total_ventas'],2);?></td>
                     <td class="table_row fecha"><?php echo $ventas['fecha'];?></td>
-                    <td><a href="mod.php?id=<?php echo $ventas['id']; ?>" alt="Editar"><i class="fas fa-edit"></i></a></td>
+                    <td><a href="mod.php?id=<?php echo $ventas['id']; ?>" alt="Editar"><i class="fas fa-edit"></i></a> <?php echo "<a href='modificar.php?id=" . $ventas['id'] . "'><img class='delete_icon' src='../images/cross.png' alt='Borrar registro'></a>" ?></td>
                 </tr>
                 <?php
                     }
