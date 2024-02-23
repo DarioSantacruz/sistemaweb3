@@ -1,9 +1,14 @@
+html {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(45deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
+  background-size: cover;
+}
+
 body {
   font-family: Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  background: #eee;
-  background-size: cover;
+  color: #FFFFFF;
 }
 
 .login-box {
@@ -12,20 +17,20 @@ body {
   left: 50%;
   width: 280px;
   transform: translate(-50%, -50%);
-  color: black;
+  color: #FFFFFF;
 }
 .login-box h1 {
   font-size: 40px;
   float: left;
   margin-bottom: 50px;
   padding: 13px 0;
-  border-bottom: 6px solid #3f51b5;
+  border-bottom: 6px solid #5eb53f;
 }
 
 .login {
   width: 250px;
   margin: 0 auto;
-  color: black;
+  color: #FFFFFF;
 }
 
 .textbox {
@@ -34,8 +39,8 @@ body {
   width: 100%;
   margin: 8px 0;
   padding: 8px 0;
-  color: black;
-  border-bottom: 1px solid #3f51b5;
+  color: #FFFFFF;
+  border-bottom: 1px solid #5eb53f;
 }
 .textbox i {
   float: left;
@@ -47,7 +52,7 @@ body {
   float: left;
   width: 80%;
   margin: 0 10px;
-  color: black;
+  color: #FFFFFF;
   border: none;
   outline: none;
   background: none;
@@ -59,8 +64,8 @@ body {
   margin: 12px 0;
   padding: 5px;
   cursor: pointer;
-  color: black;
-  border: 2px solid #3f51b5;
+  color: #FFFFFF;
+  border: 2px solid #5eb53f;
   background: none;
 }
 
@@ -69,7 +74,7 @@ ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  background-color: #eee;
+  background-color: rgb(2, 0, 36);
 }
 
 li {
@@ -81,11 +86,11 @@ li a {
   padding: 14px 16px;
   text-align: center;
   text-decoration: none;
-  color: black;
+  color: #FFFFFF;
 }
 
 .active {
-  border-bottom: 6px solid #3f51b5;
+  border-bottom: 6px solid #5eb53f;
 }
 
 .sesion {
@@ -94,20 +99,86 @@ li a {
   padding: 5px;
   cursor: pointer;
   transform: translate(-20%);
-  color: black;
-  border: 2px solid #3f51b5;
+  color: #FFFFFF;
+  border: 2px solid #5eb53f;
   background: none;
 }
 
-tr {
+h2 {
+  text-align: center;
+  color: #5eb53f;
+}
+
+table {
+  width: 80%;
+  margin: 1em auto;
+  border: #FFFFFF 3px solid;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: linear-gradient(50deg, rgba(255, 255, 255, 0.4) 12%, rgba(255, 255, 255, 0.1) 77%);
+  box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+table .table_header {
+  color: #000000;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #FFFFFF;
+}
+table .table_header {
+  padding: 15px;
+  text-align: center;
+}
+
+tbody tr {
   font-size: 18px;
-  color: black;
+  color: #FFFFFF;
   text-orientation: center;
+}
+tbody tr td {
+  padding: 5px;
+}
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0);
+}
+tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.2);
+}
+tbody tr:hover {
+  transition: background-color 100ms ease-out 100ms;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.id {
+  width: 10%;
+  text-align: center;
+}
+
+.num_ventas {
+  width: 10%;
+  text-align: center;
+}
+
+.total_ventas {
+  width: 65%;
+  text-align: center;
+}
+
+.fecha {
+  width: 25%;
+  text-align: center;
+}
+
+tbody .total_ventas {
+  text-align: right;
 }
 
 title {
   text-align: center;
-  color: black;
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=style.css.map */
